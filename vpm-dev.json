@@ -41,10 +41,10 @@
                         "holdgimick"
                     ]
                 },
-                "0.6.2": {
+                "0.6.3": {
                     "name": "jp.aramaa.holdgimick",
-                    "version": "0.6.2",
-                    "url": "https://github.com/aramaa-vr/HoldGimick/releases/download/v0.6.2/jp.aramaa.holdgimick-0.6.2.zip?",
+                    "version": "0.6.3",
+                    "url": "https://github.com/aramaa-vr/HoldGimick/releases/download/v0.6.3/jp.aramaa.holdgimick-0.6.3.zip?",
                     "displayName": "VCC_Test_HoldGimick",
                     "description": "VCCお試し版です。VRChatアバター向けの抱っこされることができるギミックです。",
                     "unity": "2022.3",
