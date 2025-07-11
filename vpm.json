@@ -18,6 +18,7 @@
                     "changelogUrl": "https://github.com/aramaa-vr/HoldGimick/blob/master/CHANGELOG.md",
                     "licensesUrl": "https://github.com/aramaa-vr/HoldGimick/blob/master/LICENSE",
                     "license": "Custom",
+                    "deprecated": "このバージョンは非推奨です。Unityフォルダにライセンス情報が含まれておらず、誤解を招く可能性があるため、新しいバージョンへの更新を推奨します。",
                     "legacyFolders": {
                         "Assets\\Aramaa\\HoldGimick": "68e9b3fe244621a4b9e799b1ff081200"
                     },
