@@ -325,6 +325,9 @@
                         "com.vrchat.base": ">=3.8.2",
                         "nadena.dev.modular-avatar": ">=1.12.5"
                     },
+                    "vrc-get": {
+                        "yanked": "このバージョンは不具合があるため、使用しないでください。バージョン 1.0.5 をインストールしてください。"
+                    },
                     "type": "avatar",
                     "keywords": [
                         "VRChat",
