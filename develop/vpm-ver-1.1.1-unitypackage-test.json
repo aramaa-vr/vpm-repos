@@ -2,7 +2,7 @@
     "name": "aramaa.unitypackage.test",
     "id": "io.github.aramaa.vpm.unitypackage.test",
     "author": "aramaa",
-    "url": "https://aramaa-vr.github.io/vpm-repos/vpm.json",
+    "url": "https://aramaa-vr.github.io/vpm-repos/develop/vpm-ver-1.1.1-unitypackage-test.json",
     "packages": {
         "jp.aramaa.dakochite-gimmick": {
             "versions": {
