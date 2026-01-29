@@ -9,7 +9,7 @@
                 "0.2.9": {
                     "name": "jp.aramaa.create-chibi",
                     "version": "0.2.9",
-                    "url": "https://github.com/aramaa-vr/create-chibi/releases/download/0.2.9/jp.aramaa.create-chibi-0.2.9.zip",
+                    "url": "https://aramaa-vr.github.io/create-chibi/packages/jp.aramaa.create-chibi-0.2.9.zip",
                     "displayName": "CreateChibi - おちびちゃんズ変換ツール",
                     "description": "VRChatアバター向けのおちびちゃんズ変換ツール（Unity Editor拡張）。Hierarchyで元のアバターを選択し、「Aramaa > おちびちゃんズ化ツール」から変換先のおちびちゃんズを選んで実行します（初回起動時はロードあり）。",
                     "unity": "2022.3",
