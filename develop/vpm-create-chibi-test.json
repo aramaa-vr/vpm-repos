@@ -2,7 +2,7 @@
     "name": "aramaa.create-chibi.test",
     "id": "io.github.aramaa.create-chibi.test",
     "author": "aramaa",
-    "url": "https://aramaa-vr.github.io/vpm-repos/develop/vpm-ver-1.1.1-unitypackage-test.json",
+    "url": "https://aramaa-vr.github.io/vpm-repos/develop/vpm-create-chibi-test.json",
     "packages": {
         "jp.aramaa.create-chibi": {
             "versions": {
