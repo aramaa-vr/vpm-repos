@@ -18,6 +18,9 @@
                     "changelogUrl": "https://github.com/aramaa-vr/create-chibi/blob/master/CHANGELOG.md",
                     "licensesUrl": "https://github.com/aramaa-vr/create-chibi/blob/master/LICENSE",
                     "license": "Custom",
+                    "legacyFolders": {
+                        "Assets\\Aramaa\\CreateChibi": "8dc75c6781b7d8f448e588df13d4acf2"
+                    },
                     "author": {
                         "name": "あらまあ素敵なショップ"
                     },
