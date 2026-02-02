@@ -116,43 +116,6 @@
                         "変換",
                         "CreateChibi"
                     ]
-                },
-                "0.3.2": {
-                    "name": "jp.aramaa.create-chibi",
-                    "version": "0.3.2",
-                    "url": "https://github.com/aramaa-vr/create-chibi/releases/download/0.3.2/jp.aramaa.create-chibi-0.3.2.zip",
-                    "displayName": "CreateChibi - おちびちゃんズ化ツール",
-                    "description": "VRChatアバター向けのおちびちゃんズ化ツール（Unity Editor拡張）。Hierarchyで元のアバターを選択し、「Aramaa > おちびちゃんズ化ツール」から変換先のおちびちゃんズを選んで実行します（初回起動時はロードあり）。",
-                    "unity": "2022.3",
-                    "unityRelease": "22f1",
-                    "documentationUrl": "https://github.com/aramaa-vr/create-chibi/blob/master/README.md",
-                    "changelogUrl": "https://github.com/aramaa-vr/create-chibi/blob/master/CHANGELOG.md",
-                    "licensesUrl": "https://github.com/aramaa-vr/create-chibi/blob/master/LICENSE",
-                    "license": "Custom",
-                    "legacyFolders": {
-                        "Assets\\Aramaa\\CreateChibi": "8dc75c6781b7d8f448e588df13d4acf2"
-                    },
-                    "author": {
-                        "name": "あらまあ素敵なショップ"
-                    },
-                    "vpmDependencies": {
-                        "com.vrchat.avatars": ">=3.10.1",
-                        "com.vrchat.base": ">=3.10.1",
-                        "nadena.dev.modular-avatar": ">=1.15.1",
-                        "net.narazaka.vrchat.floor-adjuster": ">=1.1.2",
-                        "jp.lilxyzw.liltoon": ">=2.3.2",
-                        "jp.aramaa.dakochite-gimmick": ">=1.1.2"
-                    },
-                    "type": "avatar",
-                    "keywords": [
-                        "VRChat",
-                        "アバター",
-                        "Unity",
-                        "Editor",
-                        "おちびちゃんズ",
-                        "変換",
-                        "CreateChibi"
-                    ]
                 }
             }
         }
