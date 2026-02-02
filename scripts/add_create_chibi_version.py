@@ -1,0 +1,118 @@
+#!/usr/bin/env python3
+"""Add a new version entry to develop/vpm-create-chibi-dev.json.
+
+This duplicates the latest version entry and updates only the version
+number and download URL to the specified version.
+"""
+
+from __future__ import annotations
+
+import argparse
+import copy
+import re
+import json
+import os
+import tempfile
+from pathlib import Path
+from typing import Dict, Tuple
+
+
+VERSION_PATTERN = re.compile(r"^\d+(?:\.\d+)*$")
+
+
+def parse_version(version: str) -> Tuple[int, ...]:
+    if not VERSION_PATTERN.match(version):
+        raise ValueError(f"Version '{version}' is not numeric dot notation.")
+    return tuple(int(part) for part in version.split("."))
+
+
+def load_json(path: Path) -> Dict:
+    with path.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def write_json(path: Path, payload: Dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temp_handle = tempfile.NamedTemporaryFile(
+        "w",
+        encoding="utf-8",
+        dir=path.parent,
+        delete=False,
+    )
+    temp_path = Path(temp_handle.name)
+    try:
+        with temp_handle:
+            json.dump(payload, temp_handle, ensure_ascii=False, indent=4)
+            temp_handle.write("\n")
+        os.replace(temp_path, path)
+    finally:
+        if temp_path.exists():
+            temp_path.unlink()
+
+
+def add_version(input_path: Path, output_path: Path, new_version: str) -> str:
+    data = load_json(input_path)
+    versions = data["packages"]["jp.aramaa.create-chibi"]["versions"]
+
+    if new_version in versions:
+        raise ValueError(f"Version {new_version} already exists in {input_path}.")
+
+    latest_version = max(versions.keys(), key=parse_version)
+    latest_entry = versions[latest_version]
+    if latest_entry.get("version") != latest_version:
+        raise ValueError(
+            f"Latest entry version '{latest_entry.get('version')}' "
+            f"does not match key '{latest_version}'."
+        )
+    new_entry = copy.deepcopy(latest_entry)
+
+    new_entry["version"] = new_version
+    if "url" in new_entry and isinstance(new_entry["url"], str):
+        if latest_version not in new_entry["url"]:
+            raise ValueError(
+                f"Latest version '{latest_version}' not found in URL "
+                f"'{new_entry['url']}'."
+            )
+        new_entry["url"] = new_entry["url"].replace(latest_version, new_version, 1)
+
+    items = list(versions.items())
+    insert_index = next(
+        (index for index, (key, _) in enumerate(items) if key == latest_version),
+        len(items) - 1,
+    )
+    items.insert(insert_index + 1, (new_version, new_entry))
+    data["packages"]["jp.aramaa.create-chibi"]["versions"] = dict(items)
+
+    write_json(output_path, data)
+    return latest_version
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Add a new jp.aramaa.create-chibi version entry by copying the latest one."
+        )
+    )
+    parser.add_argument("version", help="New version string, e.g. 0.3.2")
+    parser.add_argument(
+        "--path",
+        default="develop/vpm-create-chibi-dev.json",
+        type=Path,
+        help="Path to the input vpm JSON file.",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        help="Path to write the updated vpm JSON file (defaults to input path).",
+    )
+    args = parser.parse_args()
+
+    output_path = args.output or args.path
+    latest_version = add_version(args.path, output_path, args.version)
+    print(
+        f"Added version {args.version} based on {latest_version} to {output_path}."
+    )
+
+
+if __name__ == "__main__":
+    main()
