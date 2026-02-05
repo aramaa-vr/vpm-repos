@@ -2,7 +2,7 @@
     "name": "aramaa.ochibi-chans-converter-tool.dev",
     "id": "io.github.aramaa.ochibi-chans-converter-tool.dev",
     "author": "aramaa",
-    "url": "https://aramaa-vr.github.io/vpm-repos/develop/vpm-ochibi-chans-converter-tool-test.json",
+    "url": "https://aramaa-vr.github.io/vpm-repos/develop/vpm-ochibi-chans-converter-tool-dev.json",
     "packages": {
         "jp.aramaa.ochibi-chans-converter-tool": {
             "versions": {
