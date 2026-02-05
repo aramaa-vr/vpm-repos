@@ -99,7 +99,7 @@ def main() -> None:
     parser.add_argument("version", help="New version string, e.g. 0.3.2")
     parser.add_argument(
         "--path",
-        default="develop/vpm-create-chibi-dev.json",
+        default="develop/vpm-ochibi-chans-converter-tool-dev.json",
         type=Path,
         help=f"Path to the input vpm JSON file for {TOOL_NAME}.",
     )
