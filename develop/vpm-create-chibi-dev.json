@@ -1,22 +1,22 @@
 {
-    "name": "aramaa.create-chibi.dev",
-    "id": "io.github.aramaa.create-chibi.dev",
+    "name": "aramaa.ochibi-chans-converter-tool.dev",
+    "id": "io.github.aramaa.ochibi-chans-converter-tool.dev",
     "author": "aramaa",
-    "url": "https://aramaa-vr.github.io/vpm-repos/develop/vpm-create-chibi-test.json",
+    "url": "https://aramaa-vr.github.io/vpm-repos/develop/vpm-ochibi-chans-converter-tool-test.json",
     "packages": {
-        "jp.aramaa.create-chibi": {
+        "jp.aramaa.ochibi-chans-converter-tool": {
             "versions": {
                 "0.2.9": {
-                    "name": "jp.aramaa.create-chibi",
+                    "name": "jp.aramaa.ochibi-chans-converter-tool",
                     "version": "0.2.9",
-                    "url": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/releases/download/0.2.9/jp.aramaa.create-chibi-0.2.9.zip",
+                    "url": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/releases/download/0.2.9/jp.aramaa.create-chibi-0.2.9.zip",
                     "displayName": "CreateChibi - おちびちゃんズ変換ツール",
                     "description": "VRChatアバター向けのおちびちゃんズ変換ツール（Unity Editor拡張）。Hierarchyで元のアバターを選択し、「Aramaa > おちびちゃんズ化ツール」から変換先のおちびちゃんズを選んで実行します（初回起動時はロードあり）。",
                     "unity": "2022.3",
                     "unityRelease": "22f1",
-                    "documentationUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/blob/master/README.md",
-                    "changelogUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/blob/master/CHANGELOG.md",
-                    "licensesUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/blob/master/LICENSE",
+                    "documentationUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/README.md",
+                    "changelogUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/CHANGELOG.md",
+                    "licensesUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/LICENSE",
                     "license": "Custom",
                     "legacyFolders": {
                         "Assets\\Aramaa\\CreateChibi": "8dc75c6781b7d8f448e588df13d4acf2"
@@ -44,16 +44,16 @@
                     ]
                 },
                 "0.3.0": {
-                    "name": "jp.aramaa.create-chibi",
+                    "name": "jp.aramaa.ochibi-chans-converter-tool",
                     "version": "0.3.0",
-                    "url": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/releases/download/0.3.0/jp.aramaa.create-chibi-0.3.0.zip",
+                    "url": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-ochibi-chans-converter-tool/releases/download/0.3.0/jp.aramaa.create-chibi-0.3.0.zip",
                     "displayName": "CreateChibi - おちびちゃんズ変換ツール",
                     "description": "VRChatアバター向けのおちびちゃんズ変換ツール（Unity Editor拡張）。Hierarchyで元のアバターを選択し、「Aramaa > おちびちゃんズ化ツール」から変換先のおちびちゃんズを選んで実行します（初回起動時はロードあり）。",
                     "unity": "2022.3",
                     "unityRelease": "22f1",
-                    "documentationUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/blob/master/README.md",
-                    "changelogUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/blob/master/CHANGELOG.md",
-                    "licensesUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/blob/master/LICENSE",
+                    "documentationUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/README.md",
+                    "changelogUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/CHANGELOG.md",
+                    "licensesUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/LICENSE",
                     "license": "Custom",
                     "legacyFolders": {
                         "Assets\\Aramaa\\CreateChibi": "8dc75c6781b7d8f448e588df13d4acf2"
@@ -81,16 +81,16 @@
                     ]
                 },
                 "0.3.1": {
-                    "name": "jp.aramaa.create-chibi",
+                    "name": "jp.aramaa.ochibi-chans-converter-tool",
                     "version": "0.3.1",
-                    "url": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/releases/download/0.3.1/jp.aramaa.create-chibi-0.3.1.zip",
+                    "url": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/releases/download/0.3.1/jp.aramaa.create-chibi-0.3.1.zip",
                     "displayName": "CreateChibi - おちびちゃんズ化ツール",
                     "description": "VRChatアバター向けのおちびちゃんズ化ツール（Unity Editor拡張）。Hierarchyで元のアバターを選択し、「Aramaa > おちびちゃんズ化ツール」から変換先のおちびちゃんズを選んで実行します（初回起動時はロードあり）。",
                     "unity": "2022.3",
                     "unityRelease": "22f1",
-                    "documentationUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/blob/master/README.md",
-                    "changelogUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/blob/master/CHANGELOG.md",
-                    "licensesUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/blob/master/LICENSE",
+                    "documentationUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/README.md",
+                    "changelogUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/CHANGELOG.md",
+                    "licensesUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/LICENSE",
                     "license": "Custom",
                     "legacyFolders": {
                         "Assets\\Aramaa\\CreateChibi": "8dc75c6781b7d8f448e588df13d4acf2"
@@ -120,14 +120,14 @@
                 "0.3.4": {
                     "name": "jp.aramaa.create-chibi",
                     "version": "0.3.4",
-                    "url": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/releases/download/0.3.4/jp.aramaa.create-chibi-0.3.4.zip",
+                    "url": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/releases/download/0.3.4/jp.aramaa.create-chibi-0.3.4.zip",
                     "displayName": "Ochibi-chans おちびちゃんズ化ツール",
                     "description": "VRChatアバター向けのおちびちゃんズ化ツール（Unity Editor拡張）。Hierarchyで元のアバターを選択し、「Aramaa > Ochibi-chans おちびちゃんズ化ツール」から変換先のおちびちゃんズを選んで実行します（初回起動時はロードあり）。",
                     "unity": "2022.3",
                     "unityRelease": "22f1",
-                    "documentationUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/blob/master/README.md",
-                    "changelogUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/blob/master/CHANGELOG.md",
-                    "licensesUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool-create-chibi/blob/master/LICENSE",
+                    "documentationUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/README.md",
+                    "changelogUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/CHANGELOG.md",
+                    "licensesUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/LICENSE",
                     "license": "Custom",
                     "legacyFolders": {
                         "Assets\\Aramaa\\CreateChibi": "8dc75c6781b7d8f448e588df13d4acf2"
