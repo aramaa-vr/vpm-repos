@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Add a new version entry to develop/vpm-create-chibi-dev.json.
+"""Add a new version entry for ochibi-chans-converter-tool.
 
 This duplicates the latest version entry and updates only the version
 number and download URL to the specified version.
@@ -18,6 +18,8 @@ from typing import Dict, Tuple
 
 
 VERSION_PATTERN = re.compile(r"^\d+(?:\.\d+)*$")
+PACKAGE_ID = "jp.aramaa.ochibi-chans-converter-tool"
+TOOL_NAME = "ochibi-chans-converter-tool"
 
 
 def parse_version(version: str) -> Tuple[int, ...]:
@@ -52,7 +54,7 @@ def write_json(path: Path, payload: Dict) -> None:
 
 def add_version(input_path: Path, output_path: Path, new_version: str) -> str:
     data = load_json(input_path)
-    versions = data["packages"]["jp.aramaa.create-chibi"]["versions"]
+    versions = data["packages"][PACKAGE_ID]["versions"]
 
     if new_version in versions:
         raise ValueError(f"Version {new_version} already exists in {input_path}.")
@@ -81,7 +83,7 @@ def add_version(input_path: Path, output_path: Path, new_version: str) -> str:
         len(items) - 1,
     )
     items.insert(insert_index + 1, (new_version, new_entry))
-    data["packages"]["jp.aramaa.create-chibi"]["versions"] = dict(items)
+    data["packages"][PACKAGE_ID]["versions"] = dict(items)
 
     write_json(output_path, data)
     return latest_version
@@ -90,7 +92,8 @@ def add_version(input_path: Path, output_path: Path, new_version: str) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser(
         description=(
-            "Add a new jp.aramaa.create-chibi version entry by copying the latest one."
+            f"Add a new {PACKAGE_ID} ({TOOL_NAME}) version entry by copying the "
+            "latest one."
         )
     )
     parser.add_argument("version", help="New version string, e.g. 0.3.2")
@@ -98,7 +101,7 @@ def main() -> None:
         "--path",
         default="develop/vpm-create-chibi-dev.json",
         type=Path,
-        help="Path to the input vpm JSON file.",
+        help=f"Path to the input vpm JSON file for {TOOL_NAME}.",
     )
     parser.add_argument(
         "--output",
