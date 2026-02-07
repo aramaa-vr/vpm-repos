@@ -29,8 +29,6 @@
                         "name": "aramaa"
                     },
                     "vpmDependencies": {
-                        "com.vrchat.avatars": ">=3.10.1",
-                        "com.vrchat.base": ">=3.10.1",
                         "nadena.dev.modular-avatar": ">=1.15.1",
                         "net.narazaka.vrchat.floor-adjuster": ">=1.1.2",
                         "jp.lilxyzw.liltoon": ">=2.3.2",
