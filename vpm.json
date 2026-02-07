@@ -1,7 +1,7 @@
 {
-    "name": "aramaa（あらまあ素敵なショップ）",
+    "name": "Aramaa（あらまあ素敵なショップ）",
     "id": "io.github.aramaa.vpm",
-    "author": "aramaa（あらまあ素敵なショップ）",
+    "author": "Aramaa（あらまあ素敵なショップ）",
     "url": "https://aramaa-vr.github.io/vpm-repos/vpm.json",
     "packages": {
         "jp.aramaa.ochibi-chans-converter-tool": {
