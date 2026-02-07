@@ -1,9 +1,54 @@
 {
-    "name": "aramaa",
+    "name": "Aramaa（あらまあ素敵なショップ）",
     "id": "io.github.aramaa.vpm",
-    "author": "aramaa",
+    "author": "Aramaa（あらまあ素敵なショップ）",
     "url": "https://aramaa-vr.github.io/vpm-repos/vpm.json",
     "packages": {
+        "jp.aramaa.ochibi-chans-converter-tool": {
+            "versions": {
+                "0.5.2-beta": {
+                    "name": "jp.aramaa.ochibi-chans-converter-tool",
+                    "version": "0.5.2-beta",
+                    "url": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/releases/download/0.5.2-beta/jp.aramaa.ochibi-chans-converter-tool-0.5.2-beta.zip",
+                    "displayName": "おちびちゃんズ化ツール（Ochibi-chans Converter Tool）",
+                    "description": "VRChatアバター向けのおちびちゃんズ化ツール（Unity Editor拡張）。Hierarchyで元のアバターを選択し、「Aramaa > おちびちゃんズ化ツール（Ochibi-chans Converter Tool）」から変換先のおちびちゃんズを選んで実行します（初回起動時はロードあり）。",
+                    "unity": "2022.3",
+                    "unityRelease": "22f1",
+                    "documentationUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/README.md",
+                    "changelogUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/CHANGELOG.md",
+                    "licensesUrl": "https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/LICENSE",
+                    "license": "Custom",
+                    "legacyFolders": {
+                        "Assets\\Aramaa\\CreateChibi": "8dc75c6781b7d8f448e588df13d4acf2",
+                        "Assets\\Aramaa\\OchibiChansConverterTool": "fd5f8d663fa54724c944a861b3d6f9c2"
+                    },
+                    "legacyPackages": [
+                        "jp.aramaa.create-chibi"
+                    ],
+                    "author": {
+                        "name": "aramaa"
+                    },
+                    "vpmDependencies": {
+                        "com.vrchat.avatars": ">=3.10.1",
+                        "com.vrchat.base": ">=3.10.1",
+                        "nadena.dev.modular-avatar": ">=1.15.1",
+                        "net.narazaka.vrchat.floor-adjuster": ">=1.1.2",
+                        "jp.lilxyzw.liltoon": ">=2.3.2",
+                        "jp.aramaa.dakochite-gimmick": ">=1.1.2"
+                    },
+                    "type": "avatar",
+                    "keywords": [
+                        "VRChat",
+                        "アバター",
+                        "Unity",
+                        "Editor",
+                        "おちびちゃんズ",
+                        "変換",
+                        "OchibiChansConverterTool"
+                    ]
+                }
+            }
+        },
         "jp.aramaa.dakochite-gimmick": {
             "versions": {
                 "1.0.0": {
