@@ -3,6 +3,16 @@
 
 This duplicates the latest version entry and updates only the version
 number and download URL to the specified version.
+
+Usage:
+    # デフォルトのパスのファイルを更新
+    $ python3 add_version.py 0.3.2
+
+    # 入力ファイルを指定して更新
+    $ python3 add_version.py 0.3.2 --path my-vpm-repo.json
+
+    # 別のファイル名で保存
+    $ python3 add_version.py 0.3.2 --path dev.json --output release.json
 """
 
 from __future__ import annotations
