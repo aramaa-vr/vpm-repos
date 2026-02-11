@@ -9,10 +9,10 @@ Usage:
     $ python3 scripts/add_ochibi-chans-converter-tool_version.py 0.3.2
 
     # 入力ファイルを指定して更新
-    $ python3 scripts/add_ochibi-chans-converter-tool_version.py 0.3.2 --path vpm-repo.json
+    $ python3 scripts/add_ochibi-chans-converter-tool_version.py 0.3.2 --path vpm.json
 
     # 別のファイル名で保存
-    $ python3 scripts/add_ochibi-chans-converter-tool_version.py 0.3.2 --path vpm-repo.json --output dev.json
+    $ python3 scripts/add_ochibi-chans-converter-tool_version.py 0.3.2 --path vpm.json --output dev.json
 """
 
 from __future__ import annotations
