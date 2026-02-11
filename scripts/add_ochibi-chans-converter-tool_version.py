@@ -19,26 +19,79 @@ from __future__ import annotations
 
 import argparse
 import copy
-import re
 import json
 import os
+import re
 import tempfile
 from pathlib import Path
-from typing import Dict, Tuple
+from typing import Dict, Tuple, Union
 
 
-VERSION_PATTERN = re.compile(r"^\d+(?:\.\d+)*$")
+SEMVER_PATTERN = re.compile(
+    r"^(?P<core>\d+(?:\.\d+)*)(?:-(?P<prerelease>[0-9A-Za-z.-]+))?$"
+)
+PRERELEASE_IDENTIFIER_PATTERN = re.compile(r"^[0-9A-Za-z-]+$")
 PACKAGE_ID = "jp.aramaa.ochibi-chans-converter-tool"
 TOOL_NAME = "ochibi-chans-converter-tool"
+DEFAULT_INPUT_PATH = Path("develop/vpm-ochibi-chans-converter-tool-dev.json")
 
 
-def parse_version(version: str) -> Tuple[int, ...]:
-    if not VERSION_PATTERN.match(version):
-        raise ValueError(f"Version '{version}' is not numeric dot notation.")
-    return tuple(int(part) for part in version.split("."))
+PrereleaseToken = Tuple[int, Union[int, str]]
+VersionSortKey = Tuple[Tuple[int, ...], Tuple[int, Tuple[PrereleaseToken, ...]]]
+
+
+def _parse_prerelease_identifier(identifier: str) -> PrereleaseToken:
+    if not identifier:
+        raise ValueError("Prerelease identifier must not be empty.")
+    if not PRERELEASE_IDENTIFIER_PATTERN.match(identifier):
+        raise ValueError(
+            f"Invalid prerelease identifier '{identifier}'. "
+            "Only [0-9A-Za-z-] is allowed."
+        )
+    if identifier.isdigit():
+        if len(identifier) > 1 and identifier.startswith("0"):
+            raise ValueError(
+                f"Invalid numeric prerelease identifier '{identifier}': "
+                "leading zeroes are not allowed."
+            )
+        return (0, int(identifier))
+    return (1, identifier)
+
+
+def parse_version(version: str) -> VersionSortKey:
+    match = SEMVER_PATTERN.match(version)
+    if not match:
+        raise ValueError(
+            f"Version '{version}' is invalid. "
+            "Use numeric dot notation, optionally with prerelease suffix "
+            "(example: 0.5.3-beta or 0.5.3-beta.1)."
+        )
+
+    core = tuple(int(part) for part in match.group("core").split("."))
+    prerelease = match.group("prerelease")
+    if prerelease is None:
+        # Stable releases should sort after prerelease entries with the same core.
+        return (core, (1, tuple()))
+
+    parsed_prerelease = tuple(
+        _parse_prerelease_identifier(identifier)
+        for identifier in prerelease.split(".")
+    )
+    return (core, (0, parsed_prerelease))
 
 
 def load_json(path: Path) -> Dict:
+    if not path.exists():
+        hints = []
+        candidates = ", ".join(
+            sorted(str(candidate) for candidate in Path.cwd().glob("*.json"))
+        )
+        if candidates:
+            hints.append(f"Available JSON files in current directory: {candidates}.")
+        if DEFAULT_INPUT_PATH.exists():
+            hints.append(f"For this tool, default --path is '{DEFAULT_INPUT_PATH}'.")
+        hint = f" {' '.join(hints)}" if hints else ""
+        raise FileNotFoundError(f"Input file not found: {path}.{hint}")
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
 
@@ -63,6 +116,9 @@ def write_json(path: Path, payload: Dict) -> None:
 
 
 def add_version(input_path: Path, output_path: Path, new_version: str) -> str:
+    # Validate early so the user gets a clear error before file mutation.
+    parse_version(new_version)
+
     data = load_json(input_path)
     versions = data["packages"][PACKAGE_ID]["versions"]
 
@@ -99,7 +155,7 @@ def add_version(input_path: Path, output_path: Path, new_version: str) -> str:
     return latest_version
 
 
-def main() -> None:
+def main() -> int:
     parser = argparse.ArgumentParser(
         description=(
             f"Add a new {PACKAGE_ID} ({TOOL_NAME}) version entry by copying the "
@@ -109,7 +165,7 @@ def main() -> None:
     parser.add_argument("version", help="New version string, e.g. 0.3.2")
     parser.add_argument(
         "--path",
-        default="develop/vpm-ochibi-chans-converter-tool-dev.json",
+        default=DEFAULT_INPUT_PATH,
         type=Path,
         help=f"Path to the input vpm JSON file for {TOOL_NAME}.",
     )
@@ -121,11 +177,17 @@ def main() -> None:
     args = parser.parse_args()
 
     output_path = args.output or args.path
-    latest_version = add_version(args.path, output_path, args.version)
+
+    try:
+        latest_version = add_version(args.path, output_path, args.version)
+    except (FileNotFoundError, ValueError, KeyError, json.JSONDecodeError) as error:
+        parser.exit(1, f"Error: {error}\n")
+
     print(
         f"Added version {args.version} based on {latest_version} to {output_path}."
     )
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
