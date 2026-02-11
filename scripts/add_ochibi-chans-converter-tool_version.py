@@ -141,7 +141,7 @@ def add_version(input_path: Path, output_path: Path, new_version: str) -> str:
                 f"Latest version '{latest_version}' not found in URL "
                 f"'{new_entry['url']}'."
             )
-        new_entry["url"] = new_entry["url"].replace(latest_version, new_version, 1)
+        new_entry["url"] = new_entry["url"].replace(latest_version, new_version)
 
     items = list(versions.items())
     insert_index = next(
