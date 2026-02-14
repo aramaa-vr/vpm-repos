@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "packages": [
+    { "id": "jp.aramaa.dakochite-gimmick", "version": "1.1.2" },
+    { "id": "jp.aramaa.ochibi-chans-converter-tool", "version": "0.5.3" }
+  ]
+}
