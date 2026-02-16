@@ -25,16 +25,7 @@
                         "com.vrchat.avatars": ">=3.8.2",
                         "com.vrchat.base": ">=3.8.2"
                     },
-                    "type": "avatar",
-                    "keywords": [
-                        "VRChat",
-                        "アバター",
-                        "Unity",
-                        "Editor",
-                        "おちびちゃんズ",
-                        "変換",
-                        "OchibiChansConverterTool"
-                    ]
+                    "type": "avatar"
                 }
             }
         }
