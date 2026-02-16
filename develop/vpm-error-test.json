@@ -22,8 +22,8 @@
                         "name": "aramaa"
                     },
                     "vpmDependencies": {
-                        "com.vrchat.avatars": ">=3.11.0",
-                        "com.vrchat.base": ">=3.11.0"
+                        "com.vrchat.avatars": ">=3.10.1",
+                        "com.vrchat.base": ">=3.10.1"
                     },
                     "type": "avatar"
                 }
