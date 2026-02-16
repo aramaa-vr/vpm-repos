@@ -6,10 +6,10 @@
     "packages": {
         "jp.aramaa.error-test": {
             "versions": {
-                "1.1.0": {
+                "1.1.2": {
                     "name": "jp.aramaa.error-test",
-                    "version": "1.1.0",
-                    "url": "https://github.com/aramaa-vr/dakochite-gimmick/releases/download/1.1.0/jp.aramaa.dakochite-gimmick-1.1.0.zip?",
+                    "version": "1.1.2",
+                    "url": "https://github.com/aramaa-vr/dakochite-gimmick/releases/download/1.1.2/jp.aramaa.dakochite-gimmick-1.1.2.zip?",
                     "displayName": "error-test",
                     "description": "error-test",
                     "unity": "2022.3",
@@ -21,7 +21,14 @@
                     "author": {
                         "name": "aramaa"
                     },
+                    "legacyPackages": [
+                        "jp.aramaa.holdgimick"
+                    ],
+                    "legacyFolders": {
+                        "Assets\\Aramaa\\HoldGimick": "68e9b3fe244621a4b9e799b1ff081200"
+                    },
                     "vpmDependencies": {
+                        "nadena.dev.modular-avatar": ">=1.16.2"
                         "com.vrchat.avatars": ">=3.10.1",
                     },
                     "type": "avatar"
