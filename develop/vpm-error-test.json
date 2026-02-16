@@ -6,10 +6,10 @@
     "packages": {
         "jp.aramaa.error-test": {
             "versions": {
-                "1.1.2": {
+                "1.0.0": {
                     "name": "jp.aramaa.error-test",
-                    "version": "1.1.2",
-                    "url": "https://github.com/aramaa-vr/dakochite-gimmick/releases/download/1.1.2/jp.aramaa.dakochite-gimmick-1.1.2.zip?",
+                    "version": "1.0.0",
+                    "url": "",
                     "displayName": "error-test",
                     "description": "error-test",
                     "unity": "2022.3",
