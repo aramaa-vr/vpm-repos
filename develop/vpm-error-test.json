@@ -23,7 +23,6 @@
                     },
                     "vpmDependencies": {
                         "com.vrchat.avatars": ">=3.10.1",
-                        "com.vrchat.base": ">=3.10.1"
                     },
                     "type": "avatar"
                 }
