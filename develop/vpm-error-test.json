@@ -1,0 +1,33 @@
+{
+    "name": "aramaa error test",
+    "id": "io.github.aramaa.vpm.error.test",
+    "author": "aramaa error test",
+    "url": "https://aramaa-vr.github.io/vpm-repos/develop/vpm-error-test.json",
+    "packages": {
+        "jp.aramaa.error-test": {
+            "versions": {
+                "1.0.0": {
+                    "name": "jp.aramaa.error-test",
+                    "version": "1.0.0",
+                    "url": "",
+                    "displayName": "error-test",
+                    "description": "error-test",
+                    "unity": "2022.3",
+                    "unityRelease": "22f1",
+                    "documentationUrl": "",
+                    "changelogUrl": "",
+                    "licensesUrl": "",
+                    "license": "Custom",
+                    "author": {
+                        "name": "aramaa"
+                    },
+                    "vpmDependencies": {
+                        "com.vrchat.avatars": ">=3.8.2",
+                        "com.vrchat.base": ">=3.8.2"
+                    },
+                    "type": "avatar"
+                }
+            }
+        }
+    }
+}
