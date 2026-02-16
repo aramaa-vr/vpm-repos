@@ -1,7 +1,7 @@
 {
-    "name": "aramaa error test",
-    "id": "io.github.aramaa.vpm.error.test",
-    "author": "aramaa error test",
+    "name": "aramaa.error-test",
+    "id": "io.github.aramaa.aramaa.error-test",
+    "author": "aramaa",
     "url": "https://aramaa-vr.github.io/vpm-repos/develop/vpm-error-test.json",
     "packages": {
         "jp.aramaa.error-test": {
