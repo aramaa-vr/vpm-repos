@@ -1,10 +1,10 @@
 {
     "name": "aramaa error test",
     "id": "io.github.aramaa.vpm.error.test",
-    "author": "aramaa error tes",
+    "author": "aramaa error test",
     "url": "https://aramaa-vr.github.io/vpm-repos/develop/vpm-error-test.json",
     "packages": {
-        "jp.aramaa.ochibi-chans-converter-tool": {
+        "jp.aramaa.error-test": {
             "versions": {
                 "1.0.0": {
                     "name": "jp.aramaa.error-test",
