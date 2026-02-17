@@ -1,17 +1,17 @@
 {
-    "name": "aramaa.error-test",
-    "id": "io.github.aramaa.aramaa.error-test",
+    "name": "aramaa.vpm-vpai-error-test",
+    "id": "io.github.aramaa.vpm-vpai-error-test",
     "author": "aramaa",
-    "url": "https://aramaa-vr.github.io/vpm-repos/develop/vpm-error-test.json",
+    "url": "https://aramaa-vr.github.io/vpm-repos/develop/vpm-vpai-error-test.json",
     "packages": {
-        "jp.aramaa.error-test": {
+        "jp.aramaa.vpm-vpai-error-test": {
             "versions": {
                 "1.0.0": {
-                    "name": "jp.aramaa.error-test",
+                    "name": "jp.aramaa.vpm-vpai-error-test",
                     "version": "1.0.0",
                     "url": "",
-                    "displayName": "error-test",
-                    "description": "error-test",
+                    "displayName": "vpm-vpai-error-test",
+                    "description": "vpm-vpai-error-test",
                     "unity": "2022.3",
                     "unityRelease": "22f1",
                     "documentationUrl": "",
@@ -21,12 +21,9 @@
                     "author": {
                         "name": "aramaa"
                     },
-                    "legacyPackages": [
-                        "jp.aramaa.holdgimick"
+                    "vpmRepositories": [
+                        "https://vpm.nadena.dev/vpm.json"
                     ],
-                    "legacyFolders": {
-                        "Assets\\Aramaa\\HoldGimick": "68e9b3fe244621a4b9e799b1ff081200"
-                    },
                     "vpmDependencies": {
                         "com.vrchat.avatars": ">=3.10.1",
                         "nadena.dev.modular-avatar": ">=1.16.2"
