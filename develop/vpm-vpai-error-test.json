@@ -1,36 +1,36 @@
 {
-    "name": "aramaa.vpm-vpai-error-test",
-    "id": "io.github.aramaa.vpm-vpai-error-test",
-    "author": "aramaa",
-    "url": "https://aramaa-vr.github.io/vpm-repos/develop/vpm-vpai-error-test.json",
-    "packages": {
-        "jp.aramaa.vpm-vpai-error-test": {
-            "versions": {
-                "1.1.2": {
-                    "name": "jp.aramaa.vpm-vpai-error-test",
-                    "version": "1.1.2",
-                    "url": "https://github.com/aramaa-vr/dakochite-gimmick/releases/download/1.1.2/jp.aramaa.dakochite-gimmick-1.1.2.zip?",
-                    "displayName": "vpm-vpai-error-test",
-                    "description": "vpm-vpai-error-test",
-                    "unity": "2022.3",
-                    "unityRelease": "22f1",
-                    "documentationUrl": "",
-                    "changelogUrl": "",
-                    "licensesUrl": "",
-                    "license": "Custom",
-                    "author": {
-                        "name": "aramaa"
-                    },
-                    "vpmRepositories": [
-                        "https://vpm.nadena.dev/vpm.json"
-                    ],
-                    "vpmDependencies": {
-                        "com.vrchat.avatars": ">=3.10.1",
-                        "nadena.dev.modular-avatar": ">=1.16.2"
-                    },
-                    "type": "avatar"
-                }
-            }
-        }
-    }
+	"name": "aramaa.vpm-vpai-error-test",
+	"id": "io.github.aramaa.vpm-vpai-error-test",
+	"author": "aramaa",
+	"url": "https://aramaa-vr.github.io/vpm-repos/develop/vpm-vpai-error-test.json",
+	"packages": {
+		"jp.aramaa.vpm-vpai-error-test": {
+			"versions": {
+				"1.0.0": {
+					"name": "jp.aramaa.vpm-vpai-error-test",
+					"version": "1.0.0",
+					"url": "https://github.com/aramaa-vr/vpm-vpai-error-test/releases/download/1.0.0/jp.aramaa.vpm-vpai-error-test-1.0.0.zip?",
+					"displayName": "vpm-vpai-error-test",
+					"description": "vpm-vpai-error-test",
+					"unity": "2022.3",
+					"unityRelease": "22f1",
+					"documentationUrl": "",
+					"changelogUrl": "",
+					"licensesUrl": "",
+					"license": "Custom",
+					"author": {
+						"name": "aramaa"
+					},
+					"vpmRepositories": [
+						"https://vpm.nadena.dev/vpm.json"
+					],
+					"vpmDependencies": {
+						"nadena.dev.modular-avatar": ">=1.16.2",
+						"com.vrchat.avatars": ">=3.10.1"
+					},
+					"type": "avatar"
+				}
+			}
+		}
+	}
 }
