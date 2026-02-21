@@ -107,9 +107,9 @@
                         "name": "aramaa"
                     },
                     "vpmDependencies": {
-                        "nadena.dev.modular-avatar": ">=1.16.2 < 2.0.0-a",
-                        "net.narazaka.vrchat.floor-adjuster": ">=1.1.2 < 2.0.0-a",
-                        "jp.lilxyzw.liltoon": ">=2.3.2 < 3.0.0-a",
+                        "nadena.dev.modular-avatar": ">=1.16.2 <2.0.0-a",
+                        "net.narazaka.vrchat.floor-adjuster": ">=1.1.2 <2.0.0-a",
+                        "jp.lilxyzw.liltoon": ">=2.3.2 <3.0.0-a",
                         "jp.aramaa.dakochite-gimmick": ">=1.1.2"
                     },
                     "type": "avatar",
