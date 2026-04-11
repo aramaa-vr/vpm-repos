@@ -40,6 +40,15 @@ PrereleaseToken = Tuple[int, Union[int, str]]
 VersionSortKey = Tuple[Tuple[int, ...], Tuple[int, Tuple[PrereleaseToken, ...]]]
 
 
+def _parse_core_identifier(identifier: str) -> int:
+    if len(identifier) > 1 and identifier.startswith("0"):
+        raise ValueError(
+            f"Invalid core version identifier '{identifier}': "
+            "leading zeroes are not allowed."
+        )
+    return int(identifier)
+
+
 def _parse_prerelease_identifier(identifier: str) -> PrereleaseToken:
     if not identifier:
         raise ValueError("Prerelease identifier must not be empty.")
@@ -64,10 +73,10 @@ def parse_version(version: str) -> VersionSortKey:
         raise ValueError(
             f"Version '{version}' is invalid. "
             "Use numeric dot notation, optionally with prerelease suffix "
-            "(example: 0.5.3-beta or 0.5.3-beta.1)."
+            "(example: 1.1.3-beta or 1.1.3-beta.1)."
         )
 
-    core = tuple(int(part) for part in match.group("core").split("."))
+    core = tuple(_parse_core_identifier(part) for part in match.group("core").split("."))
     prerelease = match.group("prerelease")
     if prerelease is None:
         # Stable releases should sort after prerelease entries with the same core.
