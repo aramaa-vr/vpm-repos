@@ -25,3 +25,5 @@ python scripts/add_create_chibi_version.py 0.3.2
 ```sh
 python scripts/add_create_chibi_version.py 0.3.2 --output develop/vpm-ochibi-chans-converter-tool-dev.next.json
 ```
+# Update更新作業時
+`latest.json`を更新してください
