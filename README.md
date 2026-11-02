@@ -12,7 +12,7 @@ VCC（VRChat Creator Companion）が参照する、Aramaaのパッケージ配�
 ## 登録パッケージ
 
 - [みんなでつかめるだこちてギミック](https://aramaa-vr.github.io/dakochite-gimmick-pages/)
-- [おちびちゃんズ化ツール](https://github.com/aramaa-vr/ochibi-chans-converter-tool/blob/master/README.md)
+- [おちびちゃんズ化ツール](https://aramaa-vr.github.io/ochibi-chans-converter-tool/)
 
 ## 管理者向け
 
