@@ -1027,26 +1027,6 @@
                     ]
                 }
             }
-        },
-        "jp.aramaa.player-carry-and-throw": {
-            "versions": {
-                "0.0.1": {
-                    "name": "jp.aramaa.player-carry-and-throw",
-                    "version": "0.0.1",
-                    "displayName": "だこちてギミック【ワールド版】",
-                    "description": "利用規約版1.0のPDFと案内のみを収録する初回の配布確認用パッケージ。ギミック本体は含まず、ギミックやメニューは追加されません。",
-                    "url": "https://github.com/aramaa-vr/player-carry-and-throw/releases/download/0.0.1/jp.aramaa.player-carry-and-throw-0.0.1.zip",
-                    "documentationUrl": "https://github.com/aramaa-vr/player-carry-and-throw/blob/master/README.md",
-                    "changelogUrl": "https://github.com/aramaa-vr/player-carry-and-throw/blob/master/CHANGELOG.md",
-                    "licensesUrl": "https://github.com/aramaa-vr/player-carry-and-throw/blob/master/LICENSE.md",
-                    "author": {
-                        "name": "あらまあ",
-                        "email": "arasimaa.game@gmail.com"
-                    },
-                    "license": "See LICENSE.md file",
-                    "zipSHA256": "ef9a58031b250837dad96b46602d3d2873b40d096be40290a7fa09d905ea8eee"
-                }
-            }
         }
     }
 }
