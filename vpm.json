@@ -1052,7 +1052,7 @@
                     "vpmDependencies": {
                         "com.vrchat.worlds": ">=3.10.5 <4.0.0"
                     },
-                    "zipSHA256": "1e7ef91ce4fb72c188935c4d99bb65d8c7cbd6fb349c454e43cd641bcbd99044"
+                    "zipSHA256": "22938465d0fd47dbdef92a4d617a3e063df5cc06fa265d533450b61bf56368fc"
                 }
             }
         }
