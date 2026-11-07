@@ -1,6 +1,6 @@
 # PlayerCarryAndThrowの指定版作成
 
-- 対象が `jp.aramaa.player-carry-and-throw` と確定し、指定版作成・配布準備を明示的に依頼された場合だけ、[共通手順](../PlayerCarryAndThrow/Docs/ReleaseWorkflow.md)を読む。正本が見つからない場合は推測で代替しない。
+- 対象が `jp.aramaa.player-carry-and-throw` と確定し、指定版作成・配布準備を明示的に依頼された場合だけ、[共通手順](../player-carry-and-throw-develop/Docs/ReleaseWorkflow.md)を読む。正本が見つからない場合は推測で代替しない。
 - 他パッケージの更新や通常の開発・不具合修正・調査・コンパイル／テストビルドでは発動しない。版番号やalpha／betaへの言及だけでは配布作業を追加しない。
 - この配布準備の既定はローカル更新のみ。既存変更・他パッケージ・過去版を保護し、コミット・ステージング・Push・タグ・公開はしない。新規ブランチが必要な場合だけ `feature/release-<VERSION>` を使用する。
 - 上記の配布準備規定を他の作業全体へ広げず、ユーザーの個別指示を優先する。

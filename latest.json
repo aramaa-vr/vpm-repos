@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "packages": [
     { "id": "jp.aramaa.dakochite-gimmick", "version": "1.1.4" },
-    { "id": "jp.aramaa.ochibi-chans-converter-tool", "version": "0.5.7" }
+    { "id": "jp.aramaa.ochibi-chans-converter-tool", "version": "0.5.7" },
+    { "id": "jp.aramaa.player-carry-and-throw", "version": "0.1.0-beta.1" }
   ]
 }
