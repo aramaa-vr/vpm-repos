@@ -1053,6 +1053,30 @@
                         "com.vrchat.worlds": ">=3.10.5 <4.0.0"
                     },
                     "zipSHA256": "22938465d0fd47dbdef92a4d617a3e063df5cc06fa265d533450b61bf56368fc"
+                },
+                "0.1.0": {
+                    "name": "jp.aramaa.player-carry-and-throw",
+                    "displayName": "だこちてギミック【ワールド版】",
+                    "version": "0.1.0",
+                    "unity": "2022.3",
+                    "license": "See LICENSE.md file",
+                    "description": "VRChat Worlds向けのプレイヤー抱っこ・投げギミック。",
+                    "author": {
+                        "name": "あらまあ",
+                        "email": "arasimaa.game@gmail.com"
+                    },
+                    "url": "https://github.com/aramaa-vr/player-carry-and-throw/releases/download/0.1.0/jp.aramaa.player-carry-and-throw-0.1.0.zip",
+                    "documentationUrl": "https://github.com/aramaa-vr/player-carry-and-throw/blob/master/README.md",
+                    "changelogUrl": "https://github.com/aramaa-vr/player-carry-and-throw/blob/master/CHANGELOG.md",
+                    "licensesUrl": "https://github.com/aramaa-vr/player-carry-and-throw/blob/master/LICENSE.md",
+                    "dependencies": {
+                        "com.unity.textmeshpro": "3.0.6",
+                        "com.unity.ugui": "1.0.0"
+                    },
+                    "vpmDependencies": {
+                        "com.vrchat.worlds": ">=3.10.5 <4.0.0"
+                    },
+                    "zipSHA256": "e4ba1db5a209870de15c80f1e3ce38cb9b24fcbe75c576e87f295411b52c2751"
                 }
             }
         }
