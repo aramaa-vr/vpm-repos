@@ -42,7 +42,7 @@ class LocalReleaseTests(unittest.TestCase):
         for path, value in [(self.listing_path, self.listing), (self.latest_path, self.latest), (self.index_path, self.index)]:
             path.write_bytes(tool.encode_json(value, 2))
 
-    def make_zip(self, version='0.2.0-beta.2', changes=None, filename=None, extra='original', root_name='package.json'):
+    def make_zip(self, version='0.2.0', changes=None, filename=None, extra='original', root_name='package.json'):
         self.version = version
         self.package = {**manifest(version), **(changes or {})}
         self.archive = self.root/(filename or f'{PACKAGE}-{version}.zip')
@@ -59,7 +59,7 @@ class LocalReleaseTests(unittest.TestCase):
     def snapshot(self):
         return tuple(path.read_bytes() for path in [self.listing_path, self.latest_path, self.index_path])
 
-    def test_stable_alpha_beta_use_same_zip_entry_in_all_outputs(self):
+    def test_stable_alpha_beta_register_zip_but_only_stable_enters_latest(self):
         for version in ['0.2.0', '0.2.0-alpha.1', '0.2.0-beta.2']:
             with self.subTest(version=version):
                 self.write_inputs()
@@ -71,7 +71,8 @@ class LocalReleaseTests(unittest.TestCase):
                 self.assertEqual(listing['packages'][PACKAGE]['versions'][version], entry)
                 self.assertEqual(tool.read_json(self.index_path.read_bytes())['packages'][PACKAGE]['versions'][version], entry)
                 self.assertEqual(listing['packages']['another.package'], self.listing['packages']['another.package'])
-                self.assertEqual(tool.read_json(self.latest_path.read_bytes())['packages'], self.latest['packages']+[{'id': PACKAGE, 'version': version}])
+                expected = self.latest['packages'] + ([{'id': PACKAGE, 'version': version}] if version == '0.2.0' else [])
+                self.assertEqual(tool.read_json(self.latest_path.read_bytes())['packages'], expected)
                 self.assertEqual(tool.read_json(self.index_path.read_bytes())['url'], self.index['url'])
 
     def test_dry_run_and_identical_rerun_do_not_write(self):
@@ -86,15 +87,42 @@ class LocalReleaseTests(unittest.TestCase):
         self.assertEqual(self.snapshot(), before)
 
     def test_prerelease_order_and_older_version_keep_latest(self):
+        self.make_zip('0.1.0')
+        self.assertEqual(self.run_local(), 0)
+        stable_latest = self.latest_path.read_bytes()
         versions = ['0.2.0-alpha.1', '0.2.0-beta.2', '0.2.0-beta.10', '0.2.0-rc.1', '0.2.0']
         for version in versions:
             self.make_zip(version)
             self.assertEqual(self.run_local(), 0)
-            self.assertEqual(tool.read_json(self.latest_path.read_bytes())['packages'][-1]['version'], version)
+            if version != '0.2.0':
+                self.assertEqual(self.latest_path.read_bytes(), stable_latest)
+            else:
+                self.assertEqual(tool.read_json(self.latest_path.read_bytes())['packages'][-1]['version'], version)
         self.make_zip('0.1.99')
         self.assertEqual(self.run_local(), 0)
         self.assertEqual(tool.read_json(self.latest_path.read_bytes())['packages'][-1]['version'], '0.2.0')
-        self.assertEqual(set(tool.read_json(self.listing_path.read_bytes())['packages'][PACKAGE]['versions']), set(versions+['0.1.99']))
+        self.assertEqual(set(tool.read_json(self.listing_path.read_bytes())['packages'][PACKAGE]['versions']), set(versions+['0.1.0', '0.1.99']))
+
+    def test_missing_latest_ignores_higher_registered_prerelease(self):
+        self.listing['packages'][PACKAGE] = {'versions': {
+            '0.1.0': manifest('0.1.0'),
+            '2.0.0-beta.1': manifest('2.0.0-beta.1'),
+        }}
+        self.write_inputs()
+        self.make_zip('0.1.1-alpha.1')
+        self.assertEqual(self.run_local(), 0)
+        self.assertEqual(tool.read_json(self.latest_path.read_bytes())['packages'][-1],
+                         {'id': PACKAGE, 'version': '0.1.0'})
+
+    def test_older_and_equal_stable_preserve_newer_latest(self):
+        self.latest['packages'].append({'id': PACKAGE, 'version': '0.2.0'})
+        self.write_inputs()
+        original = self.latest_path.read_bytes()
+        for version in ['0.1.0', '0.2.0', '0.3.0-alpha.1']:
+            with self.subTest(version=version):
+                self.make_zip(version)
+                self.assertEqual(self.run_local(), 0)
+                self.assertEqual(self.latest_path.read_bytes(), original)
 
     def test_compact_latest_changes_only_the_target_version(self):
         original = ('{\n  "schemaVersion": 1,\n  "packages": [\n'
@@ -115,7 +143,7 @@ class LocalReleaseTests(unittest.TestCase):
                          {**self.latest, 'packages': [{'id': PACKAGE, 'version': self.version}]})
 
     def test_local_input_mismatches_and_unsafe_options_do_not_write(self):
-        cases = [({'changes': {'version': '0.2.0'}}, {}, ()),
+        cases = [({'changes': {'version': '0.3.0'}}, {}, ()),
                  ({'filename': 'wrong.zip'}, {}, ()),
                  ({'changes': {'url': 'https://example.org/stale.zip'}}, {}, ()),
                  ({'changes': {'zipSHA256': 'self hash'}}, {}, ()),

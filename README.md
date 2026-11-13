@@ -16,6 +16,6 @@ VCC（VRChat Creator Companion）が参照する、Aramaaのパッケージ配�
 
 ## 管理者向け
 
-- `vpm.json` は配布情報、`latest.json` はパッケージごとの最新バージョンを管理します。
+- `vpm.json` は配布情報、`latest.json` はパッケージごとの最新の通常版を管理します。alpha／beta／rcなどのプレリリース版は `latest.json` に掲載しません。
 - `scripts/add_release.py` は、配布するZIPから両方のJSONをローカルで更新します。使い方は `python -B scripts/add_release.py --help` で確認できます。公開操作は別途行います。
 - パッケージ別の `scripts/add_*_version.py` を使う場合は、`latest.json` も別途更新してください。
