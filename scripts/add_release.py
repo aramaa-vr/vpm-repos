@@ -122,7 +122,9 @@ def plan_updates(listing: dict, latest: dict, entry: dict) -> tuple[dict, dict]:
         version_key(key)
         if not isinstance(value, dict) or value.get("version") != key:
             raise ValueError(f"Version key and manifest disagree: {package_id} {key}")
-    newest = max(versions, key=version_key)
+    # latest.json advertises stable releases only; prereleases remain in the listings.
+    stable_versions = [key for key in versions if version_key(key)[3]]
+    newest = max(stable_versions, key=version_key, default=None)
     items = new_latest.get("packages")
     if new_latest.get("schemaVersion") != 1 or not isinstance(items, list):
         raise ValueError("latest.json must have schemaVersion 1 and a packages array")
@@ -131,6 +133,8 @@ def plan_updates(listing: dict, latest: dict, entry: dict) -> tuple[dict, dict]:
     matches = [item for item in items if item.get("id") == package_id]
     if len(matches) > 1:
         raise ValueError(f"Duplicate package in latest.json: {package_id}")
+    if newest is None:
+        return new_listing, new_latest
     if not matches:
         items.append({"id": package_id, "version": newest})
     elif version_key(matches[0].get("version")) < version_key(newest):
